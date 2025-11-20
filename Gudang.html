@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudFienzz Store - Your Cloud Technology Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #6b46c1 0%, #3182ce 100%);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cart-badge {
+            top: -5px;
+            right: -5px;
+        }
+        
+        .nav-item::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-cloud text-3xl text-blue-300"></i>
+                <h1 class="text-2xl font-bold">CloudFienzz <span class="text-blue-300">Store</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="indexx.html" class="nav-item">Home</a>
+                <a href="#products" class="nav-item">Products</a>
+                <a href="#features" class="nav-item">Features</a>
+                <a href="#about" class="nav-item">About</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button id="cart-btn" class="text-white">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </button>
+                    <span id="cart-badge" class="cart-badge absolute bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </div>
+                <button class="md:hidden text-white" id="menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+         <div id="mobile-menu" class="md:hidden hidden bg-indigo-800">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="indexx.html" class="py-2">Home</a>
+                <a href="#products" class="py-2">Products</a>
+                <a href="#features" class="py-2">Features</a>
+                <a href="#about" class="py-2">About</a>
+                <a href="#contact" class="py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Elevate Your Cloud Experience</h2>
+                <p class="text-xl mb-6 text-blue-100">Discover cutting-edge cloud solutions tailored for your business needs with the best pricing and support in the industry.</p>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-indigo-900 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition">Explore Products</button>
+                    <button class="border border-white text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-indigo-900 transition">Learn More</button>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5a2fc876-557d-4049-945b-4c7bbfcbfe75.png" alt="Futuristic cloud computing interface with data nodes and network connections in blue and purple hues" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="bg-white py-8 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto relative">
+                <input 
+                    type="text" 
+                    placeholder="Search cloud services, solutions and more..." 
+                    class="w-full py-3 px-4 pr-12 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    id="search-input"
+                >
+                <button class="absolute right-3 top-3 text-gray-400 hover:text-indigo-600">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-16 bg-gray-50" id="products">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Our Cloud Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Choose from our wide range of cloud-based products designed for businesses of all sizes.</p>
+            </div>
+            
+            <div class="flex justify-center mb-8">
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn px-4 py-2 rounded-full bg-indigo-600 text-white" data-category="all">All Products</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="storage"><a class="nav-link" href="Gudang.html">Cloud Storage</a></button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="hosting"><a class="nav-link" href="Hosting.html">Web Hosting</a></button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="vps"><a class="nav-link" href="Vps.html">VPS</a></button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="database"><a class="nav-link" href="Databes.html">Database</a></button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                <!-- Product items will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    
